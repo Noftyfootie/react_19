@@ -1,2 +1,2 @@
 console.log("Hello React");
-console.log();
+console.log("Props");
