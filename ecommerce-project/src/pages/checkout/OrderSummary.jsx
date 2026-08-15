@@ -3,7 +3,7 @@ import { DeliveryOptions } from "./DeliveryOptions";
 import { DeliveryDate } from "./DeliveryDate";
 
 export function OrderSummary({ cart, deliveryOptions, loadCart }) {
-  console.log();
+  console.log("");
   return (
     <div className="order-summary">
       {deliveryOptions.length > 0 &&
