@@ -16,7 +16,7 @@ describe("formatMoney", () => {
   });
 
   it("Negative numbers", () => {
-    expect(formatMoney(-999)).toBe("$-9.99");
-    expect(formatMoney(-100)).toBe("$-1.00");
+    expect(formatMoney(-999)).toBe("-$9.99");
+    expect(formatMoney(-100)).toBe("-$1.00");
   });
 });
