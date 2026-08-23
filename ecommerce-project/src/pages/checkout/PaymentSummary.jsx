@@ -80,4 +80,4 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
   );
 }
 
-console.log("");
+console.log("Today");
