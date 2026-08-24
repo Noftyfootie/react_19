@@ -79,5 +79,3 @@ export function PaymentSummary({ paymentSummary, loadCart }) {
     </div>
   );
 }
-
-console.log("Today");
