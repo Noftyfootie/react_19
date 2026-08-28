@@ -77,4 +77,4 @@ export function Header({ cart = [] }: HeaderProps) {
   );
 }
 
-console.log();
+console.log("");
