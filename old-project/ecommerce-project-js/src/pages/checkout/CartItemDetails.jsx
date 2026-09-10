@@ -80,3 +80,5 @@ export function CartItemDetails({ cartItem, loadCart }) {
     </>
   );
 }
+
+console.log("");
