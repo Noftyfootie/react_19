@@ -58,6 +58,7 @@ export function ChatInput({ chatMessages, setChatMessages }) {
         clear
       </button>
       <button></button>
+      <button></button>
     </div>
   );
 }
