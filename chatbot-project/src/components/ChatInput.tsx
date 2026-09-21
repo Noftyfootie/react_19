@@ -1,29 +1,34 @@
 import dayjs from "dayjs";
 import { useState } from "react";
 import { Chatbot } from "supersimpledev";
+import type { Dispatch, SetStateAction } from "react";
 import "./ChatInput.css";
 
 type ChatMessages = {
   id: string;
   message: string;
-  sender: string;
+  sender: "user" | "robot";
   time: number;
 }[];
 
 type ChatInputProps = {
   chatMessages: ChatMessages;
-  setChatMessages: (chatMessages: ChatMessages) => void;
+  setChatMessages: Dispatch<SetStateAction<ChatMessages>>;
 };
 
 export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
   const [inputText, setInputText] = useState("");
 
-  function saveInputText(event: React.ChangeEvent<HTMLInputElement>) {
+  function saveInputText(event: {
+    target: {
+      value: string;
+    };
+  }) {
     setInputText(event.target.value);
   }
 
   function sendMessage() {
-    const newChatMessages = [
+    const newChatMessages: ChatMessages = [
       ...chatMessages,
       {
         message: inputText,

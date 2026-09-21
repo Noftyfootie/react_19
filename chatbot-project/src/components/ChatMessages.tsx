@@ -6,7 +6,7 @@ type ChatMessagesProps = {
   chatMessages: {
     id: string;
     message: string;
-    sender: string;
+    sender: "user" | "robot";
     time: number;
   }[];
 };
