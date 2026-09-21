@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChatInput } from "./components/ChatInput";
 import { ChatMessage } from "./components/ChatMessage";
 import ChatMessages from "./components/ChatMessages";
+import RobotProfileImage from "./assets/robot.png";
 import "./App.css";
 
 function App() {
@@ -39,13 +40,18 @@ function App() {
   }, [chatMessages]);
 
   return (
-    <div className="app-container">
-      <ChatMessages chatMessages={chatMessages} />
-      <ChatInput
-        chatMessages={chatMessages}
-        setChatMessages={setChatMessages}
-      />
-    </div>
+    <>
+      <link rel="icon" type="image/svg+xml" href={RobotProfileImage} />
+      <title>Chatbot-project</title>
+
+      <div className="app-container">
+        <ChatMessages chatMessages={chatMessages} />
+        <ChatInput
+          chatMessages={chatMessages}
+          setChatMessages={setChatMessages}
+        />
+      </div>
+    </>
   );
 }
 
