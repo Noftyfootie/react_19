@@ -1,0 +1,70 @@
+import { useState, useEffect } from "react";
+import { ChatInput } from "./components/ChatInput";
+import ChatMessages from "./components/ChatMessages";
+import RobotProfileImage from "./assets/robot.png";
+import "./App.css";
+
+type ChatMessage = {
+  message: string;
+  sender: "user" | "robot";
+  id: string;
+  time: number;
+};
+
+const defaultMessages: ChatMessage[] = [
+  {
+    message: "hello chatbot",
+    sender: "user",
+    id: "id1",
+    time: 1736127288920,
+  },
+  {
+    message: "Hello! How can I help you?",
+    sender: "robot",
+    id: "id2",
+    time: 1736127291230,
+  },
+  {
+    message: "can you get me today date?",
+    sender: "user",
+    id: "id3",
+    time: 1736127385356,
+  },
+  {
+    message: "Today is July 15",
+    sender: "robot",
+    id: "id4",
+    time: 1736127385500,
+  },
+];
+
+function App() {
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>(() => {
+    const savedMessages = localStorage.getItem("messages");
+
+    return savedMessages ? JSON.parse(savedMessages) : defaultMessages;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("messages", JSON.stringify(chatMessages));
+  }, [chatMessages]);
+
+  const title = `${chatMessages.length} Messages`;
+
+  return (
+    <>
+      <title>{title}</title>
+      <link rel="icon" type="image/svg+xml" href={RobotProfileImage} />
+
+      <div className="app-container">
+        <ChatMessages chatMessages={chatMessages} />
+        <ChatInput
+          chatMessages={chatMessages}
+          setChatMessages={setChatMessages}
+        />
+      </div>
+    </>
+  );
+}
+
+export default App;
