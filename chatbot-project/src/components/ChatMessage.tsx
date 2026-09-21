@@ -3,9 +3,13 @@ import RobotProfileImage from "../assets/robot.png";
 import UserProfileImage from "../assets/choose.jpg";
 import "./ChatMessage.css";
 
-export function ChatMessage({ message, sender, time }) {
-  console.log(UserProfileImage);
+type ChatMessageProps = {
+  message: string;
+  sender: string;
+  time: number;
+};
 
+export function ChatMessage({ message, sender, time }: ChatMessageProps) {
   return (
     <div
       className={sender === "user" ? "chat-message-user" : "chat-message-robot"}
