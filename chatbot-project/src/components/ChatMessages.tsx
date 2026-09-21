@@ -2,8 +2,17 @@ import { useEffect, useRef } from "react";
 import { ChatMessage } from "./ChatMessage";
 import "./ChatMessages.css";
 
-function ChatMessages({ chatMessages }) {
-  const chatMessagesRef = useRef(null);
+type ChatMessagesProps = {
+  chatMessages: {
+    id: string;
+    message: string;
+    sender: string;
+    time: number;
+  }[];
+};
+
+function ChatMessages({ chatMessages }: ChatMessagesProps) {
+  const chatMessagesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const containerElem = chatMessagesRef.current;
