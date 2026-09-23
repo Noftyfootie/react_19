@@ -32,4 +32,4 @@ export function ChatMessage({ message, sender, time }: ChatMessageProps) {
   );
 }
 
-console.log();
+console.log("update");
