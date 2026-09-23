@@ -31,3 +31,5 @@ export function ChatMessage({ message, sender, time }: ChatMessageProps) {
     </div>
   );
 }
+
+console.log();
